@@ -419,7 +419,7 @@ class PlistWriter(object):
         elif isinstance(obj, Uid):
             size = self.intSize(obj)
             self.incrementByteCount('uidBytes', incr=1 + size)
-        elif isinstance(obj, (int, long)):
+        elif isinstance(obj, (int, int)):
             size = self.intSize(obj)
             self.incrementByteCount('intBytes', incr=1 + size)
         elif isinstance(obj, float):
@@ -495,7 +495,7 @@ class PlistWriter(object):
             size = self.intSize(obj)
             output += pack('!B', 128 | size - 1)
             output += self.binaryInt(Uid)
-        elif isinstance(obj, (int, long)):
+        elif isinstance(obj, (int, int)):
             bytes = self.intSize(obj)
             root = math.log(bytes, 2)
             output += pack('!B', 16 | int(root))
