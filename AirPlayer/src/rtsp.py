@@ -201,7 +201,7 @@ class RTSPRequest(http.Request):
 
     def _renderCallback(self, result, resrc):
         body = result
-        if body is None or type(body) is not types.StringType:
+        if body is None or not isinstance(body, types.StringType):
             print('request did not return a string')
         else:
             self.setHeader('Content-Length', str(len(body)))

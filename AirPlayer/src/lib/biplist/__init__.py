@@ -414,7 +414,7 @@ class PlistWriter(object):
             self.computedUniques.add(obj)
         if obj is None:
             self.incrementByteCount('nullBytes')
-        elif type(obj) == bool:
+        elif isinstance(obj, bool):
             self.incrementByteCount('boolBytes')
         elif isinstance(obj, Uid):
             size = self.intSize(obj)
@@ -486,7 +486,7 @@ class PlistWriter(object):
             self.referencePositions[obj] = len(output)
         if obj is None:
             output += pack('!B', 0)
-        elif type(obj) == bool:
+        elif isinstance(obj, bool):
             if obj is False:
                 output += pack('!B', 8)
             else:
