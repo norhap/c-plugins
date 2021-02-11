@@ -132,21 +132,21 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 		mountusing_default = "fstab"
 
-		if self.mountinfo.has_key('mountusing'):
+		if 'mountusing' in self.mountinfo:
 			mountusing = self.mountinfo['mountusing']
 			if mountusing is False:
 				mountusing = mountusing_default
 		else:
 				mountusing = mountusing_default
 
-		if self.mountinfo.has_key('mounttype'):
+		if 'mounttype' in self.mountinfo:
 			mounttype = self.mountinfo['mounttype']
 			if mounttype is False:
 				mounttype = "nfs"
 		else:
 			mounttype = "nfs"
 
-		if self.mountinfo.has_key('active'):
+		if 'active' in self.mountinfo:
 			active = self.mountinfo['active']
 			if active == 'True':
 				active = True
@@ -154,7 +154,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				active = False
 		else:
 			active = True
-		if self.mountinfo.has_key('ip'):
+		if 'ip' in self.mountinfo:
 			if self.mountinfo['ip'] is False:
 				ip = [192, 168, 0, 0]
 			else:
@@ -166,31 +166,31 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			defaultOptions = "rw,nolock,tcp"
 		else:
 			defaultOptions = "rw,utf8,vers=3.0"
-		if self.mountinfo['sharename'] and self.mountinfo.has_key('sharename'):
+		if self.mountinfo['sharename'] and 'sharename' in self.mountinfo:
 			sharename = re_sub("\W", "", self.mountinfo['sharename'])
 			self.old_sharename = sharename
 		else:
 			sharename = ""
 			self.old_sharename = None
-		if self.mountinfo.has_key('sharedir'):
+		if 'sharedir' in self.mountinfo:
 			sharedir = self.mountinfo['sharedir']
 			self.old_sharedir = sharedir
 		else:
 			sharedir = ""
 			self.old_sharedir = None
-		if self.mountinfo.has_key('options'):
+		if 'options' in self.mountinfo:
 			options = self.mountinfo['options']
 		else:
 			options = defaultOptions
-		if self.mountinfo.has_key('username'):
+		if 'username' in self.mountinfo:
 			username = self.mountinfo['username']
 		else:
 			username = ""
-		if self.mountinfo.has_key('password'):
+		if 'password' in self.mountinfo:
 			password = self.mountinfo['password']
 		else:
 			password = ""
-		if self.mountinfo.has_key('hdd_replacement'):
+		if 'hdd_replacement' in self.mountinfo:
 			hdd_replacement = self.mountinfo['hdd_replacement']
 			if hdd_replacement == 'True':
 				hdd_replacement = True
@@ -254,7 +254,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				defaultOptions = "rw,nolock,tcp"
 			else:
 				defaultOptions = "rw,utf8,vers=3.0"
-			if self.mountinfo.has_key('options'):
+			if 'options' in self.mountinfo:
 				options = self.mountinfo['options']
 			else:
 				options = defaultOptions
