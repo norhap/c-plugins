@@ -65,7 +65,7 @@ class HTTPHeaders(dict):
     def _normalize_name(name):
         if HTTPHeaders._NORMALIZED_HEADER_RE.match(name):
             return name
-        return '-'.join([ w.capitalize() for w in name.split('-') ])
+        return '-'.join([w.capitalize() for w in name.split('-')])
 
 
 def doctests():

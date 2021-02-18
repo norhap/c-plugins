@@ -389,7 +389,7 @@ class PlistWriter(object):
 
             return HashableWrapper(n)
         elif isinstance(root, tuple):
-            n = tuple([ self.wrapRoot(value) for value in root ])
+            n = tuple([self.wrapRoot(value) for value in root])
             return HashableWrapper(n)
         else:
             return root
