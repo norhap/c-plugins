@@ -295,7 +295,7 @@ def new_InfoBarInstantRecord_recordQuestionCallback(self, answer, *args, **kwarg
 	self._recordQuestionCallback_old_rn_vps(answer, *args, **kwargs)
 	
 	try:
-		entry = len(self.recording)-1
+		entry = len(self.recording) - 1
 		if answer is not None and answer[1] == "event" and config.plugins.vps.instanttimer.value != "no" and entry is not None and entry >= 0:
 			from Vps_check import VPS_check_on_instanttimer
 			rec_ref = self.recording[entry].service_ref.ref

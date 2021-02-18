@@ -332,7 +332,7 @@ class NetworkBrowser(Screen):
 				pass
 
 		if devicetype == 'unix':
-			nfslist=netscan.nfsShare(hostip, hostname)
+			nfslist = netscan.nfsShare(hostip, hostname)
 			for x in nfslist:
 				if len(x) == 6:
 					sharelist.append(x)
@@ -361,7 +361,7 @@ class NetworkBrowser(Screen):
 
 		for x in self.network.keys():
 			hostentry = self.network[x][0][1]
-			name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
+			name = hostentry[2] + " ( " + hostentry[1].strip() + " )"
 			if os_path.exists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png")):
 				expandableIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png"))
 			else:
@@ -370,10 +370,10 @@ class NetworkBrowser(Screen):
 
 		if len(self.list):
 			for entry in self.list:
-				entry[0][2]= "%3s.%3s.%3s.%3s" % tuple(entry[0][2].split("."))
+				entry[0][2] = "%3s.%3s.%3s.%3s" % tuple(entry[0][2].split("."))
 			self.list.sort(key=lambda x: x[0][2])
 			for entry in self.list:
-				entry[0][2]= entry[0][2].replace(" ", "")
+				entry[0][2] = entry[0][2].replace(" ", "")
 		self["list"].setList(self.list)
 		self["list"].setIndex(self.listindex)
 
@@ -394,7 +394,7 @@ class NetworkBrowser(Screen):
 			if x in self.expanded:
 				networkshares = self.getNetworkShares(x, self.network[x][0][1][1].strip(), self.device)
 				hostentry = self.network[x][0][1]
-				name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
+				name = hostentry[2] + " ( " + hostentry[1].strip() + " )"
 				if os_path.exists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png")):
 					expandedIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png"))
 				else:
@@ -404,7 +404,7 @@ class NetworkBrowser(Screen):
 					self.list.append(self.BuildNetworkShareEntry(share))
 			else: # HOSTLIST - VIEW
 				hostentry = self.network[x][0][1]
-				name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
+				name = hostentry[2] + " ( " + hostentry[1].strip() + " )"
 				if os_path.exists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png")):
 					expandableIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png"))
 				else:
@@ -412,10 +412,10 @@ class NetworkBrowser(Screen):
 				self.list.append((hostentry, expandableIcon, name, None, None, None, None, None))
 		if len(self.list):
 			for entry in self.list:
-				entry[0][2]= "%3s.%3s.%3s.%3s" % tuple(entry[0][2].split("."))
+				entry[0][2] = "%3s.%3s.%3s.%3s" % tuple(entry[0][2].split("."))
 			self.list.sort(key=lambda x: x[0][2])
 			for entry in self.list:
-				entry[0][2]= entry[0][2].replace(" ", "")
+				entry[0][2] = entry[0][2].replace(" ", "")
 		self["list"].setList(self.list)
 		self["list"].setIndex(self.listindex)
 
