@@ -26,7 +26,7 @@ PROXY_BINARY = resolveFilename(SCOPE_PLUGINS, 'Extensions/AirPlayer/proxy')
 
 class AirPlayMoviePlayer(MoviePlayer):
 
-    def __init__(self, session, service, backend, start = None, lastservice = None):
+    def __init__(self, session, service, backend, start=None, lastservice=None):
         self.backend = backend
         self.startNewServiceOnPlay = False
         self.start = start
@@ -242,7 +242,7 @@ class AirPlayMoviePlayer(MoviePlayer):
         print('[AirPlayMoviePlayer] seekWatcher finished')
         return
 
-    def startServiceOfUri(self, uri, useTsService = False):
+    def startServiceOfUri(self, uri, useTsService=False):
         self.startNewServiceOnPlay = False
         if useTsService:
             sref = eServiceReference(1, 0, uri)
@@ -251,7 +251,7 @@ class AirPlayMoviePlayer(MoviePlayer):
         sref.setName('AirPlay')
         self.session.nav.playService(sref)
 
-    def startServiceOfProxy(self, useTsService = False):
+    def startServiceOfProxy(self, useTsService=False):
         if useTsService:
             self.startServiceOfUri('http://127.0.0.1:7099', True)
         else:
@@ -375,7 +375,7 @@ class AirPlayMoviePlayer(MoviePlayer):
 
         return
 
-    def formatKBits(self, value, ending = 'Bit/s', roundNumbers = 2):
+    def formatKBits(self, value, ending='Bit/s', roundNumbers=2):
         bits = value * 8
         if bits > 1048576:
             return str(round(float(bits) / float(1048576), roundNumbers)) + ' M' + ending
@@ -384,7 +384,7 @@ class AirPlayMoviePlayer(MoviePlayer):
         else:
             return str(bits) + ' ' + ending
 
-    def formatKB(self, value, ending = 'B', roundNumbers = 2):
+    def formatKB(self, value, ending='B', roundNumbers=2):
         byte = value
         if byte > 1048576:
             return str(round(float(byte) / float(1048576), roundNumbers)) + ' M' + ending
@@ -393,7 +393,7 @@ class AirPlayMoviePlayer(MoviePlayer):
         else:
             return str(byte) + ' ' + ending
 
-    def setSeekState(self, state, dummy = False):
+    def setSeekState(self, state, dummy=False):
         if self.startNewServiceOnPlay and state == self.SEEK_STATE_PLAY:
             if self.useProxy:
                 if self.proxyCaching == False:

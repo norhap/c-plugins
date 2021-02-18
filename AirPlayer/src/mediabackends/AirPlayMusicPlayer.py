@@ -19,7 +19,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 class AirPlayMusicPlayer(Screen):
 
-    def __init__(self, session, backend, message, lastservice = None):
+    def __init__(self, session, backend, message, lastservice=None):
         self.backend = backend
         backend.MusicWindow = self
         self.session = session
@@ -131,7 +131,7 @@ class AirPlayMusicPlayer(Screen):
 
         return
 
-    def setProgress(self, seconds, runtime = None):
+    def setProgress(self, seconds, runtime=None):
         self.seconds = seconds
         if runtime is not None:
             self.runtime = runtime
@@ -167,14 +167,14 @@ class AirPlayMusicPlayer(Screen):
             self['cover'].instance.setPixmap(self.currPic.__deref__())
         return
 
-    def finish_decode(self, picInfo = ''):
+    def finish_decode(self, picInfo=''):
         ptr = self.picload.getData()
         if ptr != None:
             self.currPic = ptr
             self.ShowCover()
         return
 
-    def start_decode(self, filename = None):
+    def start_decode(self, filename=None):
         if filename is None or filename == '':
             filename = config.plugins.airplayer.path.value + '/cover.jpg'
         self.picload.startDecode(filename)

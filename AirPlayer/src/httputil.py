@@ -52,7 +52,7 @@ class HTTPHeaders(dict):
         dict.__delitem__(self, norm_name)
         del self._as_list[norm_name]
 
-    def get(self, name, default = None):
+    def get(self, name, default=None):
         return dict.get(self, HTTPHeaders._normalize_name(name), default)
 
     def update(self, *args, **kwargs):

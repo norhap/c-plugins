@@ -12,7 +12,7 @@ from thread import start_new_thread
 
 class AirPlayPicturePlayer(Screen):
 
-    def __init__(self, session, backend, picFile, lastservice = None):
+    def __init__(self, session, backend, picFile, lastservice=None):
         self.backend = backend
         backend.PictureWindow = self
         self.bgcolor = '#00000000'
@@ -52,7 +52,7 @@ class AirPlayPicturePlayer(Screen):
             self['pic'].instance.setPixmap(self.currPic.__deref__())
         return
 
-    def finish_decode(self, picInfo = ''):
+    def finish_decode(self, picInfo=''):
         ptr = self.picload.getData()
         if ptr != None:
             self.currPic = ptr

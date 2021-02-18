@@ -58,7 +58,7 @@ def readPlist(pathOrFile):
     return result
 
 
-def writePlist(rootObject, pathOrFile, binary = True):
+def writePlist(rootObject, pathOrFile, binary=True):
     if not binary:
         return plistlib.writePlist(rootObject, pathOrFile)
     else:
@@ -77,7 +77,7 @@ def readPlistFromString(data):
     return readPlist(StringIO(data))
 
 
-def writePlistToString(rootObject, binary = True):
+def writePlistToString(rootObject, binary=True):
     if not binary:
         return plistlib.writePlistToString(rootObject)
     else:
@@ -394,10 +394,10 @@ class PlistWriter(object):
         else:
             return root
 
-    def incrementByteCount(self, field, incr = 1):
+    def incrementByteCount(self, field, incr=1):
         self.byteCounts = self.byteCounts._replace(**{field: self.byteCounts.__getattribute__(field) + incr})
 
-    def computeOffsets(self, obj, asReference = False, isRoot = False):
+    def computeOffsets(self, obj, asReference=False, isRoot=False):
 
         def check_key(key):
             if key is None:
@@ -474,7 +474,7 @@ class PlistWriter(object):
             return (False, output)
             return
 
-    def writeObject(self, obj, output, setReferencePosition = False):
+    def writeObject(self, obj, output, setReferencePosition=False):
 
         def proc_variable_length(format, length):
             result = ''
@@ -578,7 +578,7 @@ class PlistWriter(object):
         result = pack('>d', obj)
         return result
 
-    def binaryInt(self, obj, bytes = None):
+    def binaryInt(self, obj, bytes=None):
         result = ''
         if bytes is None:
             bytes = self.intSize(obj)

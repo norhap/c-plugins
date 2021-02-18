@@ -119,7 +119,7 @@ class RTSPRequest(http.Request):
         if key.lower() in self.headers.keys():
             del self.headers[key.lower()]
 
-    def setResponseCode(self, code, message = None):
+    def setResponseCode(self, code, message=None):
         self.code = code
         if message:
             self.code_message = message
@@ -326,5 +326,5 @@ class ErrorResource(RTSPResource):
 
 class NoResource(ErrorResource):
 
-    def __init__(self, message = None):
+    def __init__(self, message=None):
         ErrorResource.__init__(self, NOT_FOUND, message)

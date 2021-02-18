@@ -127,7 +127,7 @@ class E2MediaBackend(BaseMediaBackend):
             self.MusicWindow.start_decode()
         return
 
-    def updateAirTunesProgress(self, seconds, runtime = None):
+    def updateAirTunesProgress(self, seconds, runtime=None):
         print('[AirPlayer] updateAirTunesProgress')
         if self.MusicWindow is not None:
             self.MusicWindow.setProgress(seconds, runtime)
@@ -146,7 +146,7 @@ class E2MediaBackend(BaseMediaBackend):
         self.MusicWindow = None
         return
 
-    def play_movie(self, url, start = None):
+    def play_movie(self, url, start=None):
         print('[AirPlayer] play_movie')
         self.setValidationMessage(None)
         if 'mov' in url.lower():

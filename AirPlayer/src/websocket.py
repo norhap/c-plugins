@@ -59,7 +59,7 @@ class WebSocketRequest(Request):
 class WebSocketSite(Site):
     requestFactory = WebSocketRequest
 
-    def __init__(self, resource, logPath = None, timeout = 43200, supportedProtocols = None):
+    def __init__(self, resource, logPath=None, timeout=43200, supportedProtocols=None):
         Site.__init__(self, resource, logPath, timeout)
         self.handlers = {}
         self.supportedProtocols = supportedProtocols or []

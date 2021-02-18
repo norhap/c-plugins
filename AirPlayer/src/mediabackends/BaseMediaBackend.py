@@ -6,7 +6,7 @@ import urllib2
 
 class BaseMediaBackend(object):
 
-    def __init__(self, host = None, port = None, username = None, password = None):
+    def __init__(self, host=None, port=None, username=None, password=None):
         self._host = host
         self._port = port
         self._username = username

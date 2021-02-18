@@ -39,7 +39,7 @@ class AutoMount():
 
 		self.getAutoMountPoints()
 
-	def getAutoMountPoints(self, callback = None):
+	def getAutoMountPoints(self, callback=None):
 		# Initialize mounts to empty list
 		automounts = []
 		self.automounts = {}
@@ -411,7 +411,7 @@ class AutoMount():
 		if self.MountConsole is not None:
 			self.MountConsole = None
 
-	def removeMount(self, mountpoint, callback = None):
+	def removeMount(self, mountpoint, callback=None):
 		print("[AutoMount.py] removing mount: ", mountpoint)
 		self.newautomounts = {}
 		for sharename, sharedata in self.automounts.items():
