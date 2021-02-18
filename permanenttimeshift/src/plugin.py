@@ -40,7 +40,8 @@ from enigma import eTimer, eServiceCenter, eBackgroundFileEraser, iPlayableServi
 from os import stat as os_stat, listdir as os_listdir, link as os_link, path as os_path, statvfs
 from time import localtime, time, gmtime, strftime
 from timer import TimerEntry
-import os, gettext
+import os
+import gettext
 import Screens.InfoBar
 import Screens.Standby
 
