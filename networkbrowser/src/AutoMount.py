@@ -413,7 +413,7 @@ class AutoMount():
 			tmpfile.close()
 			f.close()
 			os.rename(filename + '.tmp', filename)
-		
+
 	def escape(self, data):
 		return data.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&#39;')
 

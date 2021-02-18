@@ -182,4 +182,3 @@ class UserDialog(Screen, ConfigListScreen):
 		self.hostdata = {'username': self.username.value, 'password': self.password.value}
 		write_cache(self.cache_file, self.hostdata)
 		self.close(True)
-

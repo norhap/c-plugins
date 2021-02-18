@@ -114,7 +114,7 @@ class NetworkBrowser(Screen):
 		self["key_yellow"] = StaticText(_("Rescan"))
 		self["key_blue"] = StaticText(_("Expert"))
 		self["infotext"] = StaticText(_("Press OK to mount!"))
-		
+
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 		{
 			"ok": self.go,
@@ -266,7 +266,7 @@ class NetworkBrowser(Screen):
 			if x[2] not in self.network:
 				self.network[x[2]] = []
 			self.network[x[2]].append((NetworkDescriptor(name=x[1], description=x[2]), x))
-		
+
 		for x in self.network.keys():
 			hostentry = self.network[x][0][1]
 			name = hostentry[2] + " ( " + hostentry[1].strip() + " )"
@@ -501,9 +501,9 @@ class ScanIP(Screen, ConfigListScreen):
 			"green": self.goNfs,
 			"yellow": self.goAddress,
 		}, -1)
-		
+
 		self.ipAddress = ConfigIP(default=[0, 0, 0, 0])
-		
+
 		ConfigListScreen.__init__(self, [
 			getConfigListEntry(_("IP Address"), self.ipAddress),
 		], self.session)
@@ -530,4 +530,3 @@ class ScanIP(Screen, ConfigListScreen):
 			self.close((self.ipAddress.getText(), "nfs"))
 		else:
 			self.exit
-

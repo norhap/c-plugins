@@ -194,4 +194,3 @@ class AutoMountView(Screen):
 			if data:
 				print('finihed showlist')
 				self.showMountsList()
-
