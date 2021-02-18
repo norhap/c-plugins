@@ -19,6 +19,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 HAIRTUNES_BINARY = '/usr/bin/hairtunes'
 AIRTUNES_PROXY_BINARY = resolveFilename(SCOPE_PLUGINS, 'Extensions/AirPlayer/atproxy')
 
+
 class AirtunesProtocolHandler(RTSPResource):
 
     def __init__(self, media_backend):

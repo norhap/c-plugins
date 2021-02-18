@@ -4,6 +4,7 @@ from __future__ import print_function
 import base64
 import urllib2
 
+
 class BaseMediaBackend(object):
 
     def __init__(self, host=None, port=None, username=None, password=None):

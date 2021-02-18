@@ -48,6 +48,7 @@ global_protocol_handler = None
 global_media_backend = None
 global_airtunes_protocol_handler = None
 
+
 class AP_MainMenu(Screen, ConfigListScreen):
     skin = '<screen name="AP_MainMenu" title="AirPlayer Settings" position="center,center" size="565,370">\n\t\t<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="text" position="5,50" size="555,250" halign="center" valign="center" font="Regular;20" />\n\t</screen>'
 

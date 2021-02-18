@@ -12,6 +12,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from UserDialog import UserDialog
 import os
 
+
 class UserManager(Screen):
 	skin = """
 		<screen name="UserManager" position="center,center" size="560,400" title="UserManager">

@@ -21,6 +21,7 @@ try:
 except:
 	import pickle
 
+
 def write_cache(cache_file, cache_data):
 	path = os.path.dirname(cache_file)
 	if not os.path.isdir(path):
@@ -31,9 +32,11 @@ def write_cache(cache_file, cache_data):
 	with open(cache_file, 'w') as fd:
 		pickle.dump(cache_data, fd, -1)
 
+
 def load_cache(cache_file):
 	with open(cache_file) as fd:
 		return pickle.load(fd)
+
 
 class UserDialog(Screen, ConfigListScreen):
 	skin = """

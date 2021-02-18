@@ -10,6 +10,7 @@ from AirPlayMoviePlayer import AirPlayMoviePlayer
 from AirPlayMusicPlayer import AirPlayMusicPlayer
 from AirPlayPicturePlayer import AirPlayPicturePlayer
 
+
 def isValidServiceId(idToTest):
     testSRef = eServiceReference(idToTest, 0, 'Just a TestReference')
     info = eServiceCenter.getInstance().info(testSRef)
@@ -33,6 +34,7 @@ else:
     else:
         print('no\n')
         print('[AirPlayer] No valid AirPlayer-Service found')
+
 
 class E2MediaBackend(BaseMediaBackend):
 

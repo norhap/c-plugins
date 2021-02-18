@@ -53,8 +53,10 @@ import Screens.Standby
 PluginLanguageDomain = "PermanentTimeshift"
 PluginLanguagePath = "Extensions/PermanentTimeshift/locale/"
 
+
 def localeInit():
 	gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
+
 
 def _(txt):
 	if gettext.dgettext(PluginLanguageDomain, txt):
@@ -62,6 +64,7 @@ def _(txt):
 	else:
 		print("[" + PluginLanguageDomain + "] fallback to default translation for " + txt)
 		return gettext.gettext(txt)
+
 
 language.addCallback(localeInit())
 
@@ -84,6 +87,7 @@ config.plugins.pts.isRecording = NoSave(ConfigYesNo(default=False))
 ###################################
 ###  PTS TimeshiftState Screen  ###
 ###################################
+
 
 class PTSTimeshiftState(Screen):
 	skin = """
@@ -114,11 +118,13 @@ class PTSTimeshiftState(Screen):
 ###   PTS CopyTimeshift Task    ###
 ###################################
 
+
 class CopyTimeshiftJob(Job):
 	def __init__(self, toolbox, cmdline, srcfile, destfile, eventname):
 		Job.__init__(self, _("Saving Timeshift files"))
 		self.toolbox = toolbox
 		AddCopyTimeshiftTask(self, cmdline, srcfile, destfile, eventname)
+
 
 class AddCopyTimeshiftTask(Task):
 	def __init__(self, job, cmdline, srcfile, destfile, eventname):
@@ -155,11 +161,13 @@ class AddCopyTimeshiftTask(Task):
 ###   PTS MergeTimeshift Task   ###
 ###################################
 
+
 class MergeTimeshiftJob(Job):
 	def __init__(self, toolbox, cmdline, srcfile, destfile, eventname):
 		Job.__init__(self, _("Merging Timeshift files"))
 		self.toolbox = toolbox
 		AddMergeTimeshiftTask(self, cmdline, srcfile, destfile, eventname)
+
 
 class AddMergeTimeshiftTask(Task):
 	def __init__(self, job, cmdline, srcfile, destfile, eventname):
@@ -198,11 +206,13 @@ class AddMergeTimeshiftTask(Task):
 ###   Create APSC Files Task   ###
 ##################################
 
+
 class CreateAPSCFilesJob(Job):
 	def __init__(self, toolbox, cmdline, eventname):
 		Job.__init__(self, _("Creating AP and SC Files"))
 		self.toolbox = toolbox
 		CreateAPSCFilesTask(self, cmdline, eventname)
+
 
 class CreateAPSCFilesTask(Task):
 	def __init__(self, job, cmdline, eventname):
@@ -221,6 +231,8 @@ class CreateAPSCFilesTask(Task):
 ###########################
 #####  Class InfoBar  #####
 ###########################
+
+
 class InfoBar(InfoBarOrg):
 	def __init__(self, session):
 		InfoBarOrg.__init__(self, session)
@@ -1331,6 +1343,7 @@ class InfoBar(InfoBarOrg):
 				self.activatePermanentTimeshift()
 			Notifications.AddNotification(MessageBox, _("Maximum Timeshift length per Event reached!\nRestarting Timeshift now ..."), MessageBox.TYPE_INFO, timeout=5)
 
+
 #Replace the InfoBar with our version ;)
 Screens.InfoBar.InfoBar = InfoBar
 
@@ -1338,6 +1351,7 @@ Screens.InfoBar.InfoBar = InfoBar
 ##### Class Standby Hack 1 #####
 ################################
 TryQuitMainloop_getRecordEvent = Screens.Standby.TryQuitMainloop.getRecordEvent
+
 
 class TryQuitMainloopPTS(TryQuitMainloop):
 	def __init__(self, session, retvalue=1, timeout=-1, default_yes=True):
@@ -1351,6 +1365,7 @@ class TryQuitMainloopPTS(TryQuitMainloop):
 		else:
 			TryQuitMainloop_getRecordEvent(self, recservice, event)
 
+
 Screens.Standby.TryQuitMainloop = TryQuitMainloopPTS
 
 ################################
@@ -1358,6 +1373,7 @@ Screens.Standby.TryQuitMainloop = TryQuitMainloopPTS
 ################################
 
 Screens_Standby_Standby = Screens.Standby.Standby
+
 
 class StandbyPTS(Standby):
 	def __init__(self, session):
@@ -1374,12 +1390,14 @@ class StandbyPTS(Standby):
 		if InfoBar and InfoBar.instance:
 			InfoBar.saveTimeshiftActions(InfoBar.instance, postaction="standby")
 
+
 Screens.Standby.Standby = StandbyPTS
 
 ############
 #zapUp Hack#
 ############
 InfoBarChannelSelection_zapUp = InfoBarChannelSelection.zapUp
+
 
 def zapUp(self):
 	if self.pts_blockZap_timer.isActive():
@@ -1390,12 +1408,14 @@ def zapUp(self):
 	else:
 		InfoBarChannelSelection_zapUp(self)
 
+
 InfoBarChannelSelection.zapUp = zapUp
 
 ##############
 #zapDown Hack#
 ##############
 InfoBarChannelSelection_zapDown = InfoBarChannelSelection.zapDown
+
 
 def zapDown(self):
 	if self.pts_blockZap_timer.isActive():
@@ -1406,12 +1426,14 @@ def zapDown(self):
 	else:
 		InfoBarChannelSelection_zapDown(self)
 
+
 InfoBarChannelSelection.zapDown = zapDown
 
 ##################
 #historyBack Hack#
 ##################
 InfoBarChannelSelection_historyBack = InfoBarChannelSelection.historyBack
+
 
 def historyBack(self):
 	if self.pts_pvrStateDialog == "PTSTimeshiftState" and self.timeshift_enabled and self.isSeekable():
@@ -1425,12 +1447,14 @@ def historyBack(self):
 	else:
 		InfoBarChannelSelection_historyBack(self)
 
+
 InfoBarChannelSelection.historyBack = historyBack
 
 ##################
 #historyNext Hack#
 ##################
 InfoBarChannelSelection_historyNext = InfoBarChannelSelection.historyNext
+
 
 def historyNext(self):
 	if self.pts_pvrStateDialog == "PTSTimeshiftState" and self.timeshift_enabled and self.isSeekable():
@@ -1444,6 +1468,7 @@ def historyNext(self):
 	else:
 		InfoBarChannelSelection_historyNext(self)
 
+
 InfoBarChannelSelection.historyNext = historyNext
 
 ######################
@@ -1451,11 +1476,13 @@ InfoBarChannelSelection.historyNext = historyNext
 ######################
 InfoBarChannelSelection_switchChannelUp = InfoBarChannelSelection.switchChannelUp
 
+
 def switchChannelUp(self):
 	if self.save_current_timeshift and self.timeshift_enabled:
 		InfoBar.saveTimeshiftActions(self, postaction="switchChannelUp")
 	else:
 		InfoBarChannelSelection_switchChannelUp(self)
+
 
 InfoBarChannelSelection.switchChannelUp = switchChannelUp
 
@@ -1464,11 +1491,13 @@ InfoBarChannelSelection.switchChannelUp = switchChannelUp
 ########################
 InfoBarChannelSelection_switchChannelDown = InfoBarChannelSelection.switchChannelDown
 
+
 def switchChannelDown(self):
 	if self.save_current_timeshift and self.timeshift_enabled:
 		InfoBar.saveTimeshiftActions(self, postaction="switchChannelDown")
 	else:
 		InfoBarChannelSelection_switchChannelDown(self)
+
 
 InfoBarChannelSelection.switchChannelDown = switchChannelDown
 
@@ -1477,11 +1506,13 @@ InfoBarChannelSelection.switchChannelDown = switchChannelDown
 ######################
 InfoBarChannelSelection_openServiceList = InfoBarChannelSelection.openServiceList
 
+
 def openServiceList(self):
 	if self.save_current_timeshift and self.timeshift_enabled:
 		InfoBar.saveTimeshiftActions(self, postaction="openServiceList")
 	else:
 		InfoBarChannelSelection_openServiceList(self)
+
 
 InfoBarChannelSelection.openServiceList = openServiceList
 
@@ -1490,11 +1521,13 @@ InfoBarChannelSelection.openServiceList = openServiceList
 ###########################
 InfoBarChannelSelection_showRadioChannelList = InfoBarChannelSelection.showRadioChannelList
 
+
 def showRadioChannelList(self, zap=False):
 	if self.save_current_timeshift and self.timeshift_enabled:
 		InfoBar.saveTimeshiftActions(self, postaction="showRadioChannelList")
 	else:
 		InfoBarChannelSelection_showRadioChannelList(self, zap)
+
 
 InfoBarChannelSelection.showRadioChannelList = showRadioChannelList
 
@@ -1502,6 +1535,7 @@ InfoBarChannelSelection.showRadioChannelList = showRadioChannelList
 #InfoBarNumberZap Hack#
 #######################
 InfoBarNumberZap_keyNumberGlobal = InfoBarNumberZap.keyNumberGlobal
+
 
 def keyNumberGlobal(self, number):
 	if self.pts_pvrStateDialog == "PTSTimeshiftState" and self.timeshift_enabled and self.isSeekable() and number == 0:
@@ -1523,12 +1557,14 @@ def keyNumberGlobal(self, number):
 	if number and config.plugins.pts.enabled.value and self.timeshift_enabled and not self.isSeekable():
 		self.session.openWithCallback(self.numberEntered, NumberZap, number)
 
+
 InfoBarNumberZap.keyNumberGlobal = keyNumberGlobal
 
 #############################
 # getNextRecordingTime Hack #
 #############################
 RecordTimer_getNextRecordingTime = RecordTimer.getNextRecordingTime
+
 
 def getNextRecordingTime(self):
 	nextrectime = RecordTimer_getNextRecordingTime(self)
@@ -1542,11 +1578,14 @@ def getNextRecordingTime(self):
 	else:
 		return nextrectime
 
+
 RecordTimer.getNextRecordingTime = getNextRecordingTime
 
 ############################
 #InfoBarTimeshiftState Hack#
 ############################
+
+
 def _mayShow(self):
 	if InfoBar and InfoBar.instance and self.execing and self.timeshift_enabled and self.isSeekable():
 		InfoBar.ptsSeekPointerSetCurrentPos(self)
@@ -1566,6 +1605,7 @@ def _mayShow(self):
 	elif self.execing and self.timeshift_enabled and not self.isSeekable():
 		self.pvrStateDialog.hide()
 
+
 InfoBarTimeshiftState._mayShow = _mayShow
 
 ##################
@@ -1573,9 +1613,11 @@ InfoBarTimeshiftState._mayShow = _mayShow
 ##################
 InfoBarSeek_seekBack = InfoBarSeek.seekBack
 
+
 def seekBack(self):
 	InfoBarSeek_seekBack(self)
 	self.pts_lastseekspeed = self.seekstate[1]
+
 
 InfoBarSeek.seekBack = seekBack
 
@@ -1584,10 +1626,12 @@ InfoBarSeek.seekBack = seekBack
 ########################
 InfoBarSeek_doSeekRelative = InfoBarSeek.doSeekRelative
 
+
 def doSeekRelative(self, pts):
 	InfoBarSeek_doSeekRelative(self, pts)
 	if config.plugins.pts.enabled.value and config.usage.show_infobar_on_skip.value:
 		self.showAfterSeek()
+
 
 InfoBarSeek.doSeekRelative = doSeekRelative
 
@@ -1595,6 +1639,7 @@ InfoBarSeek.doSeekRelative = doSeekRelative
 #instantRecord Hack#
 ####################
 InfoBarInstantRecord_instantRecord = InfoBarInstantRecord.instantRecord
+
 
 def instantRecord(self):
 	if not config.plugins.pts.enabled.value or not self.timeshift_enabled:
@@ -1649,12 +1694,14 @@ def instantRecord(self):
 			(_("Timeshift") + " " + _("save recording (Select event)"), "savetimeshiftEvent"),
 			(_("don't record"), "no")))
 
+
 InfoBarInstantRecord.instantRecord = instantRecord
 
 #############################
 #recordQuestionCallback Hack#
 #############################
 InfoBarInstantRecord_recordQuestionCallback = InfoBarInstantRecord.recordQuestionCallback
+
 
 def recordQuestionCallback(self, answer):
 	InfoBarInstantRecord_recordQuestionCallback(self, answer)
@@ -1673,11 +1720,14 @@ def recordQuestionCallback(self, answer):
 		if answer is not None and answer[1].startswith("pts_livebuffer") is True:
 			InfoBar.SaveTimeshift(self, timeshiftfile=answer[1])
 
+
 InfoBarInstantRecord.recordQuestionCallback = recordQuestionCallback
 
 ############################
 #####  SETTINGS SCREEN #####
 ############################
+
+
 class PermanentTimeShiftSetup(Screen, ConfigListScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -1757,13 +1807,16 @@ class PermanentTimeShiftSetup(Screen, ConfigListScreen):
 
 #################################################
 
+
 def startSetup(menuid):
 	if menuid != "system":
 		return []
 	return [(_("Timeshift Settings"), PTSSetupMenu, "pts_setup", 50)]
 
+
 def PTSSetupMenu(session, **kwargs):
 	session.open(PermanentTimeShiftSetup)
+
 
 def Plugins(path, **kwargs):
 	return [PluginDescriptor(name=_("Permanent Timeshift Settings"), description=_("Permanent Timeshift Settings"), where=PluginDescriptor.WHERE_MENU, fnc=startSetup)]

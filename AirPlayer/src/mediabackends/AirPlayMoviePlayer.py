@@ -24,6 +24,7 @@ from Components.Console import Console
 
 PROXY_BINARY = resolveFilename(SCOPE_PLUGINS, 'Extensions/AirPlayer/proxy')
 
+
 class AirPlayMoviePlayer(MoviePlayer):
 
     def __init__(self, session, service, backend, start=None, lastservice=None):

@@ -22,6 +22,7 @@ __all__ = ['Uid',
  'NotBinaryPlistException']
 apple_reference_date_offset = 978307200
 
+
 class Uid(int):
     pass
 
@@ -98,6 +99,7 @@ def is_stream_binary_plist(stream):
 
 PlistTrailer = namedtuple('PlistTrailer', 'offsetSize, objectRefSize, offsetCount, topLevelObjectNumber, offsetTableOffset')
 PlistByteCounts = namedtuple('PlistByteCounts', 'nullBytes, boolBytes, intBytes, realBytes, dateBytes, dataBytes, stringBytes, uidBytes, arrayBytes, setBytes, dictBytes')
+
 
 class PlistReader(object):
     file = None

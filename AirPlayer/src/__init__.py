@@ -12,6 +12,7 @@ import shutil
 import subprocess
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
+
 def getSkins():
     print('[AirPlayer] search for Skins')
     skins = []

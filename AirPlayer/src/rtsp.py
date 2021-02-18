@@ -105,6 +105,7 @@ RESPONSES = {CONTINUE: 'Continue',
  RTSP_VERSION_NOT_SUPPORTED: 'RTSP Version not supported',
  OPTION_NOT_SUPPORTED: 'Option not supported'}
 
+
 class RTSPError(Exception):
     pass
 

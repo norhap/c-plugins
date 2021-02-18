@@ -13,6 +13,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from UserDialog import UserDialog
 from os import unlink, listdir, path as os_path
 
+
 class UserManager(Screen):
 	skin = """
 		<screen name="UserManager" position="center,center" size="560,400" title="UserManager">

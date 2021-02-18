@@ -5,6 +5,7 @@ from twisted.internet import reactor, defer
 import Queue
 from threading import currentThread
 
+
 def doBlockingCallFromMainThread(f, *a, **kw):
     queue = Queue.Queue()
 

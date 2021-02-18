@@ -34,10 +34,12 @@ from AutoMount import iAutoMount
 from MountEdit import AutoMountEdit
 from UserDialog import UserDialog
 
+
 def formatIp(ip):
 	if ip is None or len(ip) != 4:
 		return "0.0.0.0"
 	return "%d.%d.%d.%d" % (ip[0], ip[1], ip[2], ip[3])
+
 
 def write_cache(cache_file, cache_data):
 	#Does a cPickle dump
@@ -49,6 +51,7 @@ def write_cache(cache_file, cache_data):
 	fd = open(cache_file, 'w')
 	pickle.dump(cache_data, fd, -1)
 	fd.close()
+
 
 def valid_cache(cache_file, cache_ttl):
 	#See if the cache file exists and is still living
@@ -62,6 +65,7 @@ def valid_cache(cache_file, cache_ttl):
 	else:
 		return 1
 
+
 def load_cache(cache_file):
 	#Does a cPickle load
 	fd = open(cache_file)
@@ -69,10 +73,12 @@ def load_cache(cache_file):
 	fd.close()
 	return cache_data
 
+
 class NetworkDescriptor:
 	def __init__(self, name="NetworkServer", description=""):
 		self.name = name
 		self.description = description
+
 
 class NetworkBrowser(Screen):
 	skin = """
@@ -598,6 +604,7 @@ class NetworkBrowser(Screen):
 	def MountEditClosed(self, returnValue=None):
 		if returnValue == None:
 			self.updateNetworkList()
+
 
 class ScanIP(Screen, ConfigListScreen):
 	skin = """

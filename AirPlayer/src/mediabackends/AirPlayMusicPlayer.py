@@ -17,6 +17,7 @@ from helper import blockingCallFromMainThread
 from Components.Console import Console
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
+
 class AirPlayMusicPlayer(Screen):
 
     def __init__(self, session, backend, message, lastservice=None):

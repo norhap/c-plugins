@@ -13,6 +13,7 @@ from shutil import rmtree
 
 XML_FSTAB = "/etc/enigma2/automounts.xml"
 
+
 def rm_rf(d): # only for removing the opkg stuff from /media/hdd subdirs
 	try:
 		for path in (os.path.join(d, f) for f in os.listdir(d)):
@@ -24,8 +25,10 @@ def rm_rf(d): # only for removing the opkg stuff from /media/hdd subdirs
 	except Exception as ex:
 		print("AutoMount failed to remove", d, "Error:", ex)
 
+
 class AutoMount():
 	"""Manages Mounts declared in a XML-Document."""
+
 	def __init__(self):
 		self.automounts = {}
 		self.restartConsole = Console()
@@ -437,7 +440,6 @@ class AutoMount():
 			res.append('</' + mountusing + '>\n')
 		return res
 
-
 	def writeMountsConfig(self):
 		# Generate List in RAM
 		list = ['<?xml version="1.0" ?>\n<mountmanager>\n']
@@ -555,5 +557,6 @@ class AutoMount():
 				if callback is not None:
 					self.callback = callback
 					self.timer.startLongTimer(1)
+
 
 iAutoMount = AutoMount()

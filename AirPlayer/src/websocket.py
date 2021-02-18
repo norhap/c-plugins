@@ -4,6 +4,7 @@ from __future__ import print_function
 from twisted.web.http import datetimeToString
 from twisted.web.server import Request, Site, version, unquote
 
+
 class WebSocketRequest(Request):
 
     def process(self):

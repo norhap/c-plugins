@@ -10,6 +10,7 @@ from Screens.Screen import Screen
 from enigma import getDesktop, ePicLoad, eBackgroundFileEraser
 from thread import start_new_thread
 
+
 class AirPlayPicturePlayer(Screen):
 
     def __init__(self, session, backend, picFile, lastservice=None):
