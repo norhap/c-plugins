@@ -71,7 +71,7 @@ class VPS_Setup(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("OK"))
 		self["key_blue"] = StaticText(_("Information"))
 
-		self["help"] = StaticText()
+		self["description"] = self["help"] = StaticText()
 
 		# Define Actions
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
