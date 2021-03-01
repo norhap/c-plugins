@@ -310,6 +310,7 @@ def new_TimerEntry_finishedChannelSelection(self, *args, **kwargs):
 	except:
 		pass
 
+
 # Do we have TimerEntryBase?
 # If so, we have to intercept its __init__ and set the session filed in
 # self, as otherwise our createConfig intercept will fail as in the
