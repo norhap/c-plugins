@@ -32,7 +32,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 	<widget source="label_cache" transparent="1" render="Label" zPosition="2" position="247,3" size="141,14" font="Regular;12" backgroundColor="#00000000" foregroundColor="#00ffffff" halign="right" />
 	<widget source="label_speed" transparent="1" render="Label" zPosition="2" position="245,17" size="141,14" font="Regular;12" backgroundColor="#00000000" foregroundColor="#00ffffff" halign="right" />
 	<widget source="label_update"  transparent="1" render="Label" zPosition="4" position="105,4"  size="140,22" font="Regular;18" backgroundColor="#00000000" foregroundColor="#00ff0000" halign="right"/>
-	
+
 	<eLabel text="Premium" position="402,4" size="45,16" font="Regular;12" backgroundColor="#00000000" foregroundColor="#00ffffff" transparent="1" />
 	<ePixmap zPosition="1" position="450,4" size="32,16" pixmap="%s/Extensions/AirPlayer/Skins/Classic/720x576/premium_off.png" />
 	<widget source="premiumUser" render="Pixmap" position="450,4" size="32,16" zPosition="2" pixmap="%s/Extensions/AirPlayer/Skins/Classic/720x576/premium_on.png">

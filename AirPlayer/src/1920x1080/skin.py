@@ -28,18 +28,18 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 	<widget source="session.CurrentService" render="Label" position="550,48" size="140,24" font="Regular;22" halign="right" foregroundColor="#00ffffff" backgroundColor="#00000000" transparent="1">
 		<convert type="ServicePosition">Length</convert>
 	</widget>
-	
+
 	<widget name="bufferslider" position="90,40" size="600,8" zPosition="1" transparent="1" pixmap="%s/Extensions/AirPlayer/Skins/Classic/1280x720/progress_grey.png" />
 	<widget source="label_cache" transparent="1" render="Label" zPosition="2" position="440,4" size="250,18" font="Regular;17" backgroundColor="#00000000" foregroundColor="#00ffffff" halign="right" />
 	<widget source="label_speed" transparent="1" render="Label" zPosition="2" position="440,22" size="250,18" font="Regular;17" backgroundColor="#00000000" foregroundColor="#00ffffff" halign="right" />
 	<widget source="label_update"  transparent="1" render="Label" zPosition="4" position="225,5"  size="250,28" font="Regular;24" backgroundColor="#00000000" foregroundColor="#00ff0000" halign="right"/>
-	
+
 	<eLabel text="Premium" position="715,5" size="80,20" font="Regular;17" backgroundColor="#00000000" foregroundColor="#00ffffff" transparent="1" />
 	<ePixmap zPosition="1" position="800,5" size="57,20" pixmap="%s/Extensions/AirPlayer/Skins/Classic/1280x720/premium_off.png" />
 	<widget source="premiumUser" render="Pixmap" position="800,5" size="57,20" zPosition="2" pixmap="%s/Extensions/AirPlayer/Skins/Classic/1280x720/premium_on.png">
       <convert type="ConditionalShowHide" />
     </widget>
-    
+
     <eLabel text="Proxy" position="715,30" size="80,20" font="Regular;17" backgroundColor="#00000000" foregroundColor="#00ffffff" transparent="1" />
 	<ePixmap zPosition="1" position="800,30" size="57,20" pixmap="%s/Extensions/AirPlayer/Skins/Classic/1280x720/proxy_off.png" />
 	<widget source="useProxy" render="Pixmap" position="800,30" size="57,20" zPosition="2" pixmap="%s/Extensions/AirPlayer/Skins/Classic/1280x720/proxy_on.png">

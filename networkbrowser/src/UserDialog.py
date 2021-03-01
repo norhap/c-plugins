@@ -67,7 +67,7 @@ class UserDialog(Screen, ConfigListScreen):
 			<widget source="VKeyIcon" render="Pixmap" pixmap="buttons/key_text.png" position="10,280" zPosition="10" size="35,25" transparent="1" alphatest="on">
 				<convert type="ConditionalShowHide" />
 			</widget>
-			<widget name="HelpWindow" pixmap="vkey_icon.png" position="410,330" zPosition="1" size="1,1" transparent="1" alphatest="on" />	
+			<widget name="HelpWindow" pixmap="vkey_icon.png" position="410,330" zPosition="1" size="1,1" transparent="1" alphatest="on" />
 		</screen>"""
 
 	def __init__(self, session, plugin_path, hostinfo=None):

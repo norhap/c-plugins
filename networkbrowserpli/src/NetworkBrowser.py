@@ -91,7 +91,7 @@ class NetworkBrowser(Screen):
 					}
 				</convert>
 			</widget>
-			<ePixmap pixmap="div-h.png" position="0,410" zPosition="1" size="560,2" />		
+			<ePixmap pixmap="div-h.png" position="0,410" zPosition="1" size="560,2" />
 			<widget source="infotext" render="Label" position="0,420" size="560,30" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
 		</screen>"""
 
