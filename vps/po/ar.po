@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VPS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-13 19:19+0330\n"
+"POT-Creation-Date: 2021-03-06 16:06+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -21,6 +21,12 @@ msgstr "%d.%B %Y"
 
 msgid "Cancel"
 msgstr "إلغاء"
+
+msgid "Check for PDC"
+msgstr ""
+
+msgid "Check for PDC availability on each service"
+msgstr ""
 
 msgid "Enable VPS"
 msgstr "تفعيل الخادم الإفتراضي الخاص"

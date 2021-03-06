@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-23 15:06+0330\n"
+"POT-Creation-Date: 2021-03-06 16:06+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -20,6 +20,12 @@ msgstr "%Y %B %e"
 
 msgid "Cancel"
 msgstr "Atšaukti"
+
+msgid "Check for PDC"
+msgstr ""
+
+msgid "Check for PDC availability on each service"
+msgstr ""
 
 msgid "Enable VPS"
 msgstr "Įjungti VPS"
