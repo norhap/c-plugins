@@ -4,11 +4,12 @@ from __future__ import print_function
 from Components.config import ConfigSubsection, ConfigText, ConfigYesNo, config
 from Screens.MessageBox import MessageBox
 from BaseMediaBackend import BaseMediaBackend
-from enigma import eServiceCenter, eDVBVolumecontrol, eServiceReference, eTimer, getBoxBrand
+from enigma import eServiceCenter, eDVBVolumecontrol, eServiceReference, eTimer
 import urllib2
 from AirPlayMoviePlayer import AirPlayMoviePlayer
 from AirPlayMusicPlayer import AirPlayMusicPlayer
 from AirPlayPicturePlayer import AirPlayPicturePlayer
+from Components.SystemInfo import BoxInfo
 
 
 def isValidServiceId(idToTest):
@@ -52,7 +53,7 @@ class E2MediaBackend(BaseMediaBackend):
         self.playPosition = 0.0
         self.updateEventInfo = None
         self.downmix_ac3 = None
-        if getBoxBrand == "azbox":
+        if BoxInfo.getItem("brand") == "azbox":
             ENIGMA_SERVICE_ID = ENIGMA_SERVICEAZ_ID
         print('[AirPlayer] using ServiceID: ', ENIGMA_SERVICE_ID)
         self.ENIGMA_SERVICE_ID = ENIGMA_SERVICE_ID
