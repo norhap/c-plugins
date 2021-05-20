@@ -17,7 +17,7 @@ from Components.Language import language
 from Components.Pixmap import Pixmap
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.Sources.StaticText import StaticText
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.Task import Task, Job, job_manager as JobManager
 from Components.UsageConfig import preferredInstantRecordPath, defaultMoviePath, defaultStorageDevice
 from Screens.ChoiceBox import ChoiceBox
@@ -835,7 +835,7 @@ class InfoBar(InfoBarOrg):
 			self.pts_curevent_eventid = curEvent[4]
 
 	def ptsFrontpanelActions(self, action=None):
-		if self.session.nav.RecordTimer.isRecording() or SystemInfo.get("NumFrontpanelLEDs", 0) == 0:
+		if self.session.nav.RecordTimer.isRecording() or BoxInfo.getItem("NumFrontpanelLEDs", 0) == 0:
 			return
 
 		try:
