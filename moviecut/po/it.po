@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MovieCut Italian language translation - enigma2 plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-23 15:06+0330\n"
+"POT-Creation-Date: 2021-06-13 10:42+0430\n"
 "PO-Revision-Date: 2019-01-05 17:52+0000\n"
-"Last-Translator: William <ghenessior@gmail.com>\n"
+"Last-Translator: AlexWilmac <ghenessior@gmail.com>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgid "Bad arguments"
 msgstr "Argomento errato!"
 
 msgid "Cancel"
-msgstr "Annull."
+msgstr "Annulla"
 
 msgid "Choose target folder"
 msgstr "Cartella destinazione"
@@ -74,10 +74,10 @@ msgstr "File .ap vuoto!"
 
 #, fuzzy
 msgid "Execute cuts"
-msgstr "Eseguire tagli"
+msgstr "Esegui tagli"
 
 msgid "Execute cuts..."
-msgstr "Eseguire tagli"
+msgstr "Esegui tagli"
 
 #, python-format
 msgid "How would you like to cut \"%s\"?"
