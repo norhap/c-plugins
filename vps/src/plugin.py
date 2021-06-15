@@ -36,6 +36,7 @@ def autostart(reason, **kwargs):
 			vps_timers.session = session
 			vps_timers.checkNextAfterEventAuto()
 			vps_timers.checkTimer()
+
 			try:
 				from Plugins.Extensions.OpenWebif.WebChilds.Toplevel import addExternalChild
 				from twisted.web import static

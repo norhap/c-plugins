@@ -107,10 +107,7 @@ vps/meta/Makefile
 vps/po/Makefile
 vps/src_cc/Makefile
 vps/src/Makefile
-vps/src/WebComponents/Makefile
-vps/src/WebComponents/Sources/Makefile
 vps/src/web-data/Makefile
-vps/src/web/Makefile
 
 ])
 AC_OUTPUT
