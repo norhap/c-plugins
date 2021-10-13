@@ -43,10 +43,10 @@ AC_SUBST(BOXTYPE)
 AC_DEFINE_UNQUOTED(BOXTYPE,"$BOXTYPE",[box type])
 
 AC_ARG_WITH(brandname,
-	[  --with-brandname=NAME brand name [[none,dreambox...]]],
-	[MACHINE_BRAND="$withval"],[MACHINE_BRAND="dreambox"])
+	AS_HELP_STRING([--with-brandname],[build for brand name, $withval]),
+	[MACHINE_BRAND="$withval"],[MACHINE_BRAND=""])
 AC_SUBST(MACHINE_BRAND)
-AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[brand name]
+AC_DEFINE_UNQUOTED(MACHINE_BRAND,"$MACHINE_BRAND",[brand name])
 
 AC_ARG_WITH(stbplatform,
 	AS_HELP_STRING([--with-stbplatform],[build for STBPLATFORM, $withval]),
