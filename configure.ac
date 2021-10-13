@@ -54,8 +54,6 @@ AC_ARG_WITH(stbplatform,
 AC_SUBST(STBPLATFORM)
 AC_DEFINE_UNQUOTED(STBPLATFORM,"$STBPLATFORM",[stb platform])
 
-PKG_CHECK_MODULES(ENIGMA2, enigma2)
-
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug="yes"])
